@@ -1,0 +1,12 @@
+[Unit]
+Description=Audit Event API
+After=network.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/audit-api
+ExecStart=/home/ubuntu/audit-api/venv/bin/uvicorn main:app --host 0.0.0.0 --port 5000
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
